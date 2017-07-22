@@ -1,0 +1,29 @@
+body {
+  height: 100vh;
+  background: url('randall-ruiz-272502.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2 1 auto;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #fff;
+  display: inline-block;
+  padding: 1rem;
+}
+
+footer {
+  text-align: center;
+  color: #fff;
+  padding: 1rem 0;
+}

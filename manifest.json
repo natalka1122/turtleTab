@@ -1,0 +1,10 @@
+{
+    "manifest_version": 2,
+    "name": "Hello World Tab",
+    "description": "Launches apps, the good way!",
+    "version": "0.0.0.1",
+    "permissions" : ["management"],
+    "chrome_url_overrides" : {
+        "newtab": "index.html"
+    }
+ }

@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background: url('randall-ruiz-272502.jpg') no-repeat center center fixed;
+  background: url('https://source.unsplash.com/random') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;

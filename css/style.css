@@ -1,0 +1,48 @@
+body {
+  height: 100vh;
+  
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2 1 auto;
+}
+
+.greeting {
+  font-size: 3rem;
+  line-height: 1;
+  color: #fff;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, .2);
+  padding: .5rem 1rem;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.page-footer {
+  text-align: center;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.page-footer a:link,
+.page-footer a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.page-footer a:hover,
+.page-footer a:active {
+  color: #fff;
+  text-decoration: underline;
+}

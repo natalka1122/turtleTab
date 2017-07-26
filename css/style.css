@@ -1,6 +1,7 @@
 body {
+  font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 100vh;
-  
+  background-color: #000;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -13,9 +14,28 @@ body {
 
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 2 1 auto;
+}
+
+/*.wrapper-center {
+  background-color: rgba(0, 0, 0, .2);
+  padding: .5rem 1rem;
+  border: 1px solid #fff;
+  border-radius: 5px;  
+}*/
+
+#time {
+  font-size: 10rem;
+  color: #fff;
+  margin: 0;
+}
+#date {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0;
 }
 
 .greeting {
@@ -23,10 +43,6 @@ main {
   line-height: 1;
   color: #fff;
   display: inline-block;
-  background-color: rgba(0, 0, 0, .2);
-  padding: .5rem 1rem;
-  border: 1px solid #fff;
-  border-radius: 5px;
 }
 
 .page-footer {

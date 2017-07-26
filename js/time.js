@@ -8,13 +8,12 @@ $( document ).ready(function() {
             var today = new Date(),
             h = checkTime(today.getHours()),
             m = checkTime(today.getMinutes()),
-            s = checkTime(today.getSeconds());
-            d = checkTime(today.getDay());
-            month=checkTime(today.getMonth())
-            $("#time").html(d+" " +month+" "+h + ":" + m);
+            day = today.getDate();
+            month = today.getMonth()+1;
+            $("#time").html(day+" " +month+" "+h + ":" + m);
             t = setTimeout(function () {
                 startTime()
-            }, 500);
+            }, 1000);
         }
         startTime();
     })();

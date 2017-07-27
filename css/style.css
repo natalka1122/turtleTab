@@ -46,9 +46,17 @@ main {
 }
 
 .page-footer {
+  float: left;
   text-align: center;
+  max-width: 250px;
+  font-size: 1.3rem;
+  border-radius: 7px;
+  font-family: 'Amatic SC', cursive;
+  line-height: 1.3;
+  margin: 0px 0px 5px 5px;
   color: #fff;
-  padding: 1rem 0;
+  padding: 0.5rem;
+  background-color: rgba(0,0,0,0.48);
 }
 
 .page-footer a:link,
@@ -61,4 +69,7 @@ main {
 .page-footer a:active {
   color: #fff;
   text-decoration: underline;
+}
+.page-footer span{
+  display: block;
 }

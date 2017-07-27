@@ -20,4 +20,10 @@ $.get(url, function(data) {
   var profileURL = 'https://unsplash.com/@' + data.user.username + '?utm_source=turtleTabE&utm_medium=referral&utm_campaign=api-credit';
   var photographerAttribution = '<a href=\'' + profileURL + '\'>' + photographer + '</a>';
   $('.photographer').html(photographerAttribution);
+  if(data.user.location!=null){
+    $('#location').html(data.user.location);
+  }
+  else{
+    $('#location').hide();
+  }
 });

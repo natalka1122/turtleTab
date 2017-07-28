@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $(document).ready(function() {
 
   // check if extension has been loaded today

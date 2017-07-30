@@ -8,19 +8,38 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
 </head>
+
 <body>
-  <main>
+
+  <section id="top">
+    <div id="strava">
+      <h2>
+        <a href="#">STRAVA</a>
+      </h2>      
+      <div id="strava-data">
+        <p>Number of activities: <span id="activityCount"></span></p>
+        <p>Activity type: <span id="activityType"></span></p>
+        <p>Distance: <span id="distance"></span>km</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="center">
     <p id="time"></p>
     <p id="date"></p>    
     <p id="greeting">Hello Turtle!</p>
-  </main>
-  <footer class="page-footer">
+  </section>
+
+  <section id="bottom">
     <span id="unsplash">
       From <a href="https://unsplash.com/?utm_source=turtleTabE&utm_medium=referral&utm_campaign=api-credit" target="_blank">Unsplash</a>
     </span>
     <span id="photographer">Loading</span>
     <span id="location">Loading</span>
-  </footer>
+  </section>
+
   <script src="js/unsplash-api.js"></script>
+  <script src="js/strava.js"></script>
 </body>
+
 </html>

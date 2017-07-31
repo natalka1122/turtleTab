@@ -1,7 +1,7 @@
 body {
   font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 100vh;
-  background-color: #000;
+  background-color: #333;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -30,8 +30,16 @@ h2, p {
   line-height: 1.15;
   margin: 5px 5px 0 0;
   color: #fff;
-  padding: 0.5rem;
+  padding: 2rem;
   background-color: rgba(0,0,0,0.48);
+}
+
+#strava-data {
+  text-align: left;
+}
+
+.activityType {
+  padding-right: 1rem;
 }
 
 #center {

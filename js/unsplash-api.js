@@ -25,7 +25,10 @@ $(document).ready(function() {
       // serve a new background image each hour
       // (triggered when new tab opened, or on refresh)
       var currentHour = currentDateTime.getHours();
-
+      
+      return false;
+      
+      
       if (localStorage.getItem('currentHour') === currentHour.toString()) {
         return true;
       }
@@ -37,6 +40,16 @@ $(document).ready(function() {
     
     
   }
+  function reverse(c, n){
+    var result=(255-parseInt(c.substr(n,2),16)).toString(16);
+    result="0".repeat(2-result.length)+result;
+    return result;
+  }
+
+  function changeColors(c1,c2){
+    $('#time').css('color', c1);
+    $('#date').css('color', c2);    
+  }
 
   // request a new image from unsplash.com
   function requestNewImage() {
@@ -46,13 +59,18 @@ $(document).ready(function() {
       var pictureMod="?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=srgb&fit=max&h=1080&orientation=landscape";
 
     $.get(url, function(data) {
-      //console.log(data);
+      console.log(data);
       var imageURL = data.urls.raw + pictureMod;
       var photographer = data.user.name;
       var photographerUsername = data.user.username;
       var profileURL = 'https://unsplash.com/@' + photographerUsername + '?utm_source=turtleTabE&utm_medium=referral&utm_campaign=api-credit';
       var photographerAttribution = '<a href=\'' + profileURL + '\' target=\'_blank\'>' + photographer + '</a>';
       var imageLocation = data.user.location;
+      var color=data.color;
+      console.log(color);
+      var reverseColor="#"+reverse(color,1)+reverse(color,3)+reverse(color,5);
+      console.log(reverseColor);
+      changeColors(color,reverseColor);
       // Save JSON in localStorage
       localStorage.setItem('imageURL', imageURL);
       localStorage.setItem('attribution', photographerAttribution);

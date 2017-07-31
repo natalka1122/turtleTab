@@ -1,16 +1,41 @@
 $(document).ready(function() {
+  // alternatively, imageSchedule can be set to daily
+  // (To do: allow user to toggle this setting)
+  var imageSchedule = 'hourly';
 
-  // check if extension has been loaded today
-  function hasExtensionLoadedToday() {
-    var currentDate = new Date().toLocaleDateString();
+  // check if extension has been loaded recently
+  // (frequency set by imageSchedule variable)
+  function tabLoadedRecently() {
+    var currentDateTime = new Date();
+
+    if (imageSchedule === 'daily') {
+      // serve a new background image each day
+      var currentDate = currentDateTime.toLocaleDateString();
+
+      if (localStorage.getItem('currentDate') === currentDate) {
+        return true;
+      }
+      else {
+        localStorage.setItem('currentDate', currentDate);
+        return false;
+      }
+    }
+
+    else if (imageSchedule === 'hourly') {
+      // serve a new background image each hour
+      // (triggered when new tab opened, or on refresh)
+      var currentHour = currentDateTime.getHours();
+
+      if (localStorage.getItem('currentHour') === currentHour.toString()) {
+        return true;
+      }
+      else {
+        localStorage.setItem('currentHour', currentHour);
+        return false;
+      }
+    }
     
-    if (localStorage.getItem('currentDate') == currentDate) {
-      return true;
-    }
-    else {
-      localStorage.setItem('currentDate', currentDate);
-      return false;
-    }
+    
   }
 
   // request a new image from unsplash.com
@@ -22,17 +47,20 @@ $(document).ready(function() {
 
     $.get(url, function(data) {
       //console.log(data);
-      var imageURL = data.urls.raw+pictureMod;
+      var imageURL = data.urls.raw + pictureMod;
       var photographer = data.user.name;
-      var profileURL = 'https://unsplash.com/@' + data.user.username + '?utm_source=turtleTabE&utm_medium=referral&utm_campaign=api-credit';
-      var photographerAttribution = '<a href=\'' + profileURL + '\'>' + photographer + '</a>';
+      var photographerUsername = data.user.username;
+      var profileURL = 'https://unsplash.com/@' + photographerUsername + '?utm_source=turtleTabE&utm_medium=referral&utm_campaign=api-credit';
+      var photographerAttribution = '<a href=\'' + profileURL + '\' target=\'_blank\'>' + photographer + '</a>';
       var imageLocation = data.user.location;
       // Save JSON in localStorage
       localStorage.setItem('imageURL', imageURL);
       localStorage.setItem('attribution', photographerAttribution);
-
       if(imageLocation != null) {
         localStorage.setItem('imageLocation', imageLocation);
+      }
+      else {
+        localStorage.removeItem('imageLocation');
       }
 
       // display image
@@ -44,6 +72,7 @@ $(document).ready(function() {
   function displayDataFromLocalStorage() {
 
     if(localStorage.getItem('imageURL') != null) {
+      $('#unsplash').show();
       $('body').css('background-image', 'url(\'' + localStorage.getItem('imageURL') + '\')');
     }
     else {
@@ -51,13 +80,15 @@ $(document).ready(function() {
     }
 
     if(localStorage.getItem('attribution') != null) {
+      $('#photographer').show();
       $('#photographer').html(localStorage.getItem('attribution'));
     }
     else {
       $('#photographer').hide();
     }
 
-    if(localStorage.getItem('imageLocation') != null) {
+    if(localStorage.getItem('imageLocation') != null && localStorage.getItem('imageLocation') != 'null') {
+      $('#location').show();
       $('#location').html(localStorage.getItem('imageLocation'));
     }
     else {
@@ -65,16 +96,16 @@ $(document).ready(function() {
     }
   }
 
-  // change background image once a day
-  function oncePerDay() {
+  // change background image (frequency set by imageSchedule variable)
+  function displayNewBackground() {
     
-    if (hasExtensionLoadedToday() && localStorage.getItem('imageURL') != null) {
+    if (tabLoadedRecently()) {
       displayDataFromLocalStorage()
     }
     else {
       // make a new API call    
-      requestNewImage();        
+      requestNewImage();       
     }  
   }
-  oncePerDay();
+  displayNewBackground();
 });

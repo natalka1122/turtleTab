@@ -1,3 +1,4 @@
+const proxyCors='https://cors-anywhere.herokuapp.com/';
 
 	(function(){
 		'use strict';
@@ -7,7 +8,7 @@
 			console.log(position);
 			longitude=position.coords.longitude;
 			latitude=position.coords.latitude;
-			var URL='https://api.darksky.net/forecast/6fc0fc8f313f6942e3988506f10117d5/'+latitude+','+longitude+'?units=si&exclude=[minutely,hourly,daily]';
+			var URL=proxyCors+'https://api.darksky.net/forecast/6fc0fc8f313f6942e3988506f10117d5/'+latitude+','+longitude+'?units=si&exclude=[minutely,hourly,daily]';
 			$.getJSON(URL,function(data){
 				console.log(data);
 			});

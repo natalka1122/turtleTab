@@ -2,8 +2,12 @@
     "manifest_version": 2,
     "name": "turtleTab",
     "description": "Calls you a turtle",
-    "version": "0.0.0.2",
-    "permissions" : ["management","geolocation","https://api.darksky.net/*"],
+    "version": "0.0.0.5",    
+    "permissions" : [
+        "management",
+        "geolocation",
+        "https://api.darksky.net/*"
+    ],
     "chrome_url_overrides" : {
         "newtab": "index.html"
     }

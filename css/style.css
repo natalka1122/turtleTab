@@ -20,25 +20,20 @@ main {
   flex: 2 1 auto;
 }
 
-/*.wrapper-center {
-  background-color: rgba(0, 0, 0, .2);
-  padding: .5rem 1rem;
-  border: 1px solid #fff;
-  border-radius: 5px;  
-}*/
-
 #time {
+  min-height: 160px;
   font-size: 10rem;
   color: #fff;
   margin: 0;
 }
 #date {
+  min-height: 32px;
   font-size: 2rem;
   color: #fff;
   margin: 0;
 }
 
-.greeting {
+#greeting {
   font-size: 3rem;
   line-height: 1;
   color: #fff;

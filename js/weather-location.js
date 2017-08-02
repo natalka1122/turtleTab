@@ -12,16 +12,16 @@ const proxyCors='https://cors-anywhere.herokuapp.com/';
 		      ],
 		      i;
 		      const icons={
-		      	"clear-day":"../icons/001lighticons-01.png",
-		      	"clear-night":"../icons/001lighticons-02.png",
-		      	"partly-cloudy-day":"../icons/001lighticons-08.png",
-		      	"partly-cloudy-night":"../icons/001lighticons-09.png",
-		      	"cloudy":"../icons/001lighticons-25.png",
-		      	"rain":"../icons/001lighticons-18.png",
-		      	"sleet":"../icons/001lighticons-23.png",
-		      	"snow":"../icons/001lighticons-24.png",
-		      	"wind":"../icons/001lighticons-06.png",
-		      	"fog":"../icons/001lighticons-13.png"
+		      	"clear-day":"icons/001lighticons-01.png",
+		      	"clear-night":"icons/001lighticons-02.png",
+		      	"partly-cloudy-day":"icons/001lighticons-08.png",
+		      	"partly-cloudy-night":"icons/001lighticons-09.png",
+		      	"cloudy":"icons/001lighticons-25.png",
+		      	"rain":"icons/001lighticons-18.png",
+		      	"sleet":"icons/001lighticons-23.png",
+		      	"snow":"icons/001lighticons-24.png",
+		      	"wind":"icons/001lighticons-06.png",
+		      	"fog":"icons/001lighticons-13.png"
 		      };
 
 		function onPositionRecieved(position){

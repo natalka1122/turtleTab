@@ -3,10 +3,12 @@
     "name": "turtleTab",
     "description": "Calls you a turtle",
     "version": "0.0.0.6",
+    "options_page": "options.html",
     "permissions" : [
         "management",
         "geolocation",
-        "https://api.darksky.net/*"
+        "https://api.darksky.net/*",
+        "storage"
     ],
     "chrome_url_overrides" : {
         "newtab": "index.html"

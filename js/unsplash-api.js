@@ -1,42 +1,50 @@
 $(document).ready(function() {
   // alternatively, imageSchedule can be set to daily
   // (To do: allow user to toggle this setting)
-  var imageSchedule = 'hourly';
+  //var imageSchedule = 'hourly';
 
   // check if extension has been loaded recently
   // (frequency set by imageSchedule variable)
-  function tabLoadedRecently() {
-    var currentDateTime = new Date();
+  
+  //tabLoadedRecently();
+  (function() {
 
-    if (imageSchedule === 'daily') {
-      // serve a new background image each day
-      var currentDate = currentDateTime.toLocaleDateString();
+    chrome.storage.sync.get('bgFrequency', function(options) {
 
-      if (localStorage.getItem('currentDate') === currentDate) {
-        return true;
+      var imageSchedule = options.bgFrequency;
+      var currentDateTime = new Date();
+
+      if (imageSchedule === 'daily') {
+        //console.log('daily');
+        // serve a new background image each day
+        var currentDate = currentDateTime.toLocaleDateString();
+
+        if (localStorage.getItem('currentDate') === currentDate) {
+          displayDataFromLocalStorage();
+        }
+        else {
+          localStorage.setItem('currentDate', currentDate);
+          // make a new API call    
+          requestNewImage();
+        }
       }
       else {
-        localStorage.setItem('currentDate', currentDate);
-        return false;
-      }
-    }
+        // serve a new background image each hour
+        // (triggered when new tab opened, or on refresh)
+        //console.log('hourly');
+        var currentHour = currentDateTime.getHours();
 
-    else if (imageSchedule === 'hourly') {
-      // serve a new background image each hour
-      // (triggered when new tab opened, or on refresh)
-      var currentHour = currentDateTime.getHours();
-
-      if (localStorage.getItem('currentHour') === currentHour.toString()) {
-        return true;
+        if (localStorage.getItem('currentHour') === currentHour.toString()) {
+          displayDataFromLocalStorage();
+        }
+        else {
+          localStorage.setItem('currentHour', currentHour);
+          // make a new API call    
+          requestNewImage();
+        }
       }
-      else {
-        localStorage.setItem('currentHour', currentHour);
-        return false;
-      }
-    }
-    
-    
-  }
+    });
+  })();
 
   // request a new image from unsplash.com
   function requestNewImage() {
@@ -97,9 +105,10 @@ $(document).ready(function() {
   }
 
   // change background image (frequency set by imageSchedule variable)
-  function displayNewBackground() {
+  /*function displayBackground() {
+    var loadedRecently = tabLoadedRecently()
     
-    if (tabLoadedRecently()) {
+    if (loadedRecently) {
       displayDataFromLocalStorage()
     }
     else {
@@ -107,5 +116,5 @@ $(document).ready(function() {
       requestNewImage();       
     }  
   }
-  displayNewBackground();
+  displayBackground();*/
 });

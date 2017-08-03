@@ -27,8 +27,7 @@ function restore_options() {
     }
     else {
       document.getElementById('bgDaily').setAttribute('checked', 'checked');
-    }
-    
+    }    
   });
 }
 

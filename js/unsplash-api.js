@@ -1,4 +1,8 @@
-const unsplashReference="#pageFooter";
+const imageAttributionReference = '#imageAttribution';
+const unsplashReference = '#unsplash';
+const photographerReference = '#photographer';
+const locationReference = '#location';
+const transitionSpeed = 800;
 
 $(document).ready(function() {
   // alternatively, imageSchedule can be set to daily
@@ -82,42 +86,28 @@ $(document).ready(function() {
   function displayDataFromLocalStorage() {
 
     if(localStorage.getItem('imageURL') != null) {
-      $('#unsplash').show();
+      $(unsplashReference).show(transitionSpeed);
       $('body').css('background-image', 'url(\'' + localStorage.getItem('imageURL') + '\')');
     }
     else {
-      $('#unsplash').hide();
+      $(unsplashReference).hide();
     }
 
     if(localStorage.getItem('attribution') != null) {
-      $('#photographer').show();
-      $('#photographer').html(localStorage.getItem('attribution'));
+      $(photographerReference).show(transitionSpeed);
+      $(photographerReference).html(localStorage.getItem('attribution'));
     }
     else {
-      $('#photographer').hide();
+      $(photographerReference).hide();
     }
 
     if(localStorage.getItem('imageLocation') != null && localStorage.getItem('imageLocation') != 'null') {
-      $('#location').show();
-      $('#location').html(localStorage.getItem('imageLocation'));
+      $(locationReference).show(transitionSpeed);
+      $(locationReference).html(localStorage.getItem('imageLocation'));
     }
     else {
-      $('#location').hide();
+      $(locationReference).hide();
     }
-    $(unsplashReference).show();
+    $(imageAttributionReference).show(transitionSpeed);
   }
-
-  // change background image (frequency set by imageSchedule variable)
-  /*function displayBackground() {
-    var loadedRecently = tabLoadedRecently()
-    
-    if (loadedRecently) {
-      displayDataFromLocalStorage()
-    }
-    else {
-      // make a new API call    
-      requestNewImage();       
-    }  
-  }
-  displayBackground();*/
 });

@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "turtleTab",
     "description": "Calls you a turtle",
-    "version": "0.0.0.7",
+    "version": "0.0.0.8",
     "permissions" : [
         "management",
         "geolocation",

@@ -1,3 +1,5 @@
+const unsplashReference="#pageFooter";
+
 $(document).ready(function() {
   // alternatively, imageSchedule can be set to daily
   // (To do: allow user to toggle this setting)
@@ -102,6 +104,7 @@ $(document).ready(function() {
     else {
       $('#location').hide();
     }
+    $(unsplashReference).show();
   }
 
   // change background image (frequency set by imageSchedule variable)

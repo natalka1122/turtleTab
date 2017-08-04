@@ -1,3 +1,5 @@
+const imageScheduleDefault = 'daily';
+
 // saves options to chrome.storage
 function save_options() {
   var bgFrequency;
@@ -21,7 +23,10 @@ function save_options() {
 
 // restores options settings using preferences stored in chrome.storage
 function restore_options() {
-  chrome.storage.sync.get('bgFrequency', function(items) {
+  // use default value bgFrequency = 'daily' (imageScheduleDefault)
+  chrome.storage.sync.get({
+    bgFrequency: imageScheduleDefault
+  }, function(items) {
     if (items.bgFrequency == 'hourly') {
       document.getElementById('bgHourly').setAttribute('checked', 'checked');
     }

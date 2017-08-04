@@ -3,25 +3,27 @@ const unsplashReference = '#unsplash';
 const photographerReference = '#photographer';
 const locationReference = '#location';
 const transitionSpeed = 800;
+const imageScheduleDefault = 'daily';
 
 $(document).ready(function() {
-  // alternatively, imageSchedule can be set to daily
-  // (To do: allow user to toggle this setting)
-  //var imageSchedule = 'hourly';
 
   // check if extension has been loaded recently
   // (frequency set by imageSchedule variable)
   
-  //tabLoadedRecently();
   (function() {
 
     chrome.storage.sync.get('bgFrequency', function(options) {
 
-      var imageSchedule = options.bgFrequency;
+      if (chrome.runtime.lastError) {
+        var imageSchedule = imageScheduleDefault;
+      }
+      else {
+        var imageSchedule = options.bgFrequency;
+      }
+      
       var currentDateTime = new Date();
 
       if (imageSchedule === 'daily') {
-        //console.log('daily');
         // serve a new background image each day
         var currentDate = currentDateTime.toLocaleDateString();
 
@@ -37,7 +39,6 @@ $(document).ready(function() {
       else {
         // serve a new background image each hour
         // (triggered when new tab opened, or on refresh)
-        //console.log('hourly');
         var currentHour = currentDateTime.getHours();
 
         if (localStorage.getItem('currentHour') === currentHour.toString()) {
@@ -60,7 +61,6 @@ $(document).ready(function() {
       var pictureMod="?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=srgb&fit=max&h=1080&orientation=landscape";
 
     $.get(url, function(data) {
-      //console.log(data);
       var imageURL = data.urls.raw + pictureMod;
       var photographer = data.user.name;
       var photographerUsername = data.user.username;

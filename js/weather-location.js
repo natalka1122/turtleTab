@@ -1,4 +1,4 @@
-const proxyCors='https://cors-anywhere.herokuapp.com/';
+const proxyCors="https://cors-anywhere.herokuapp.com/";
 var _0x8bc8=["\x36\x66\x63\x30\x66\x63\x38\x66\x33\x31\x33\x66\x36\x39\x34\x32\x65\x33\x39\x38\x38\x35\x30\x36\x66\x31\x30\x31\x31\x37\x64\x35"];const key=_0x8bc8[0];
 const units="si";
 const language="en";
@@ -14,8 +14,11 @@ function getHtml5Location() {
         showWeather();
     }
 
-    if (navigator.geolocation)
-        navigator.geolocation.getCurrentPosition(success);
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(success, getIpLocation);
+    } else {
+        getIpLocation();
+    }
 }
 
 function getIpLocation() {
@@ -52,6 +55,5 @@ function showWeather(){
 }
 
 (function(){
-    getIpLocation();
     getHtml5Location();		
 }());

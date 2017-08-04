@@ -1,44 +1,57 @@
-const unsplashReference="#pageFooter";
+const imageAttributionReference = '#imageAttribution';
+const unsplashReference = '#unsplash';
+const photographerReference = '#photographer';
+const locationReference = '#location';
+const transitionSpeed = 800;
+const imageScheduleDefault = 'daily';
 
 $(document).ready(function() {
-  // alternatively, imageSchedule can be set to daily
-  // (To do: allow user to toggle this setting)
-  var imageSchedule = 'hourly';
 
   // check if extension has been loaded recently
   // (frequency set by imageSchedule variable)
-  function tabLoadedRecently() {
-    var currentDateTime = new Date();
+  
+  (function() {
 
-    if (imageSchedule === 'daily') {
-      // serve a new background image each day
-      var currentDate = currentDateTime.toLocaleDateString();
+    chrome.storage.sync.get('bgFrequency', function(options) {
 
-      if (localStorage.getItem('currentDate') === currentDate) {
-        return true;
+      if (chrome.runtime.lastError) {
+        var imageSchedule = imageScheduleDefault;
       }
       else {
-        localStorage.setItem('currentDate', currentDate);
-        return false;
+        var imageSchedule = options.bgFrequency;
       }
-    }
+      
+      var currentDateTime = new Date();
 
-    else if (imageSchedule === 'hourly') {
-      // serve a new background image each hour
-      // (triggered when new tab opened, or on refresh)
-      var currentHour = currentDateTime.getHours();
+      if (imageSchedule === 'daily') {
+        // serve a new background image each day
+        var currentDate = currentDateTime.toLocaleDateString();
 
-      if (localStorage.getItem('currentHour') === currentHour.toString()) {
-        return true;
+        if (localStorage.getItem('currentDate') === currentDate) {
+          displayDataFromLocalStorage();
+        }
+        else {
+          localStorage.setItem('currentDate', currentDate);
+          // make a new API call    
+          requestNewImage();
+        }
       }
       else {
-        localStorage.setItem('currentHour', currentHour);
-        return false;
+        // serve a new background image each hour
+        // (triggered when new tab opened, or on refresh)
+        var currentHour = currentDateTime.getHours();
+
+        if (localStorage.getItem('currentHour') === currentHour.toString()) {
+          displayDataFromLocalStorage();
+        }
+        else {
+          localStorage.setItem('currentHour', currentHour);
+          // make a new API call    
+          requestNewImage();
+        }
       }
-    }
-    
-    
-  }
+    });
+  })();
 
   // request a new image from unsplash.com
   function requestNewImage() {
@@ -48,7 +61,6 @@ $(document).ready(function() {
       var pictureMod="?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=srgb&fit=max&h=1080&orientation=landscape";
 
     $.get(url, function(data) {
-      //console.log(data);
       var imageURL = data.urls.raw + pictureMod;
       var photographer = data.user.name;
       var photographerUsername = data.user.username;
@@ -74,41 +86,28 @@ $(document).ready(function() {
   function displayDataFromLocalStorage() {
 
     if(localStorage.getItem('imageURL') != null) {
-      $('#unsplash').show();
+      $(unsplashReference).show(transitionSpeed);
       $('body').css('background-image', 'url(\'' + localStorage.getItem('imageURL') + '\')');
     }
     else {
-      $('#unsplash').hide();
+      $(unsplashReference).hide();
     }
 
     if(localStorage.getItem('attribution') != null) {
-      $('#photographer').show();
-      $('#photographer').html(localStorage.getItem('attribution'));
+      $(photographerReference).show(transitionSpeed);
+      $(photographerReference).html(localStorage.getItem('attribution'));
     }
     else {
-      $('#photographer').hide();
+      $(photographerReference).hide();
     }
 
     if(localStorage.getItem('imageLocation') != null && localStorage.getItem('imageLocation') != 'null') {
-      $('#location').show();
-      $('#location').html(localStorage.getItem('imageLocation'));
+      $(locationReference).show(transitionSpeed);
+      $(locationReference).html(localStorage.getItem('imageLocation'));
     }
     else {
-      $('#location').hide();
+      $(locationReference).hide();
     }
-    $(unsplashReference).show();
+    $(imageAttributionReference).show(transitionSpeed);
   }
-
-  // change background image (frequency set by imageSchedule variable)
-  function displayNewBackground() {
-    
-    if (tabLoadedRecently()) {
-      displayDataFromLocalStorage()
-    }
-    else {
-      // make a new API call    
-      requestNewImage();       
-    }  
-  }
-  displayNewBackground();
 });

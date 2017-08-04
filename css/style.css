@@ -1,7 +1,17 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 100vh;
-  background-color: #000;
+  background-color: #333;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -12,26 +22,42 @@ body {
   margin: 0;
 }
 
+/***********************
+ * Top row of page
+ ***********************/
+#top-section {
+  flex: 1 1 100px;
+}
+
 #weather-comp {
+  display: none;
   font-size: .9rem;
   text-align: center;
-  max-width: 50px;
+  max-width: 72px;
+  min-height: 89px;
   border-radius: 7px;
   color: black;
   margin: 2px 0 5px 5px;
   background-color: rgba(255,255,255,0.45);
   font-family: cursive;
-  font-weight: 1.5rem;
   padding: .7rem;
   float: left;
 }
 
-main {
+/***********************
+ * Middle row of page
+ ***********************/
+#center-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 2 1 auto;
+  text-shadow: 0 0 300px rgba(0, 0, 0, 1);
+}
+
+#center-section .center {
+  display: none;
 }
 
 #time {
@@ -54,31 +80,88 @@ main {
   display: inline-block;
 }
 
-.page-footer {
-  float: left;
+/***********************
+ * Bottom row of page
+ ***********************/
+#bottom-section {
+  width: 100%;  
+  flex: 1 1 100px;
   text-align: center;
-  max-width: 250px;
-  font-size: 1.3rem;
-  border-radius: 7px;
-  font-family: 'Amatic SC', cursive;
-  line-height: 1.3;
-  margin: 0px 0px 5px 5px;
   color: #fff;
-  padding: 0.5rem;
+}
+
+#bottom-section p {
+  margin: 0;
+}
+
+#bottom-section .left,
+#bottom-section .center,
+#bottom-section .right {
+  border-radius: 7px;
   background-color: rgba(0,0,0,0.48);
 }
 
-.page-footer a:link,
-.page-footer a:visited {
+#bottom-section .left {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 1.3rem;
+  font-family: 'Amatic SC', cursive;
+  line-height: 1.3;
+  min-width: 150px;
+  margin: 0 0 5px 5px;
+  padding: .5rem 1rem;
+}
+
+#bottom-section .center {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 700;
+  width: 50%;
+  margin: 0 0 5px -25%;
+}
+
+#quote {
+  padding: .75rem;
+  text-shadow: 0 0 300px rgba(0, 0, 0, 1);
+}
+
+#author {
+  padding: 0 1rem;
+  font-weight: 400;
+  text-align: right;
+}
+
+#forismatic {
+  font-size: .75rem;
+  font-weight: 400;
+  padding: .5rem;
+}
+
+#bottom-section .right {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0 5px 5px 0;
+}
+
+#bottom-section a:link,
+#bottom-section a:visited {
   color: #fff;
   text-decoration: none;
 }
 
-.page-footer a:hover,
-.page-footer a:active {
+#bottom-section a:hover,
+#bottom-section a:active {
   color: #fff;
   text-decoration: underline;
 }
-.page-footer span{
+#bottom-section span{
   display: block;
 }

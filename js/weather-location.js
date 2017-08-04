@@ -47,7 +47,7 @@ function showWeather(){
         html+=Math.round(json.currently.apparentTemperature)+"&#8451";
 		$(weatherText).html(html);
 		$(weatherIcon).html("<img src="+icons[json.currently.icon]+" width='50' height='50'></img>");
-		$(weatherBlock).show();
+		$(weatherBlock).show(800);
     });
 }
 

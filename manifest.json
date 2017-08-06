@@ -11,6 +11,7 @@
         "management",
         "geolocation",
         "https://api.darksky.net/*",
+        "*://api.forismatic.com/*",
         "storage",
         "tabs"
     ],

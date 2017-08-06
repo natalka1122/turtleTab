@@ -53,7 +53,7 @@ body {
   justify-content: center;
   align-items: center;
   flex: 2 1 auto;
-  text-shadow: 0 0 300px rgba(0, 0, 0, 1);
+  //text-shadow: 0 0 300px rgba(0, 0, 0, 1);
 }
 
 #center-section .center {
@@ -98,7 +98,6 @@ body {
 #bottom-section .center,
 #bottom-section .right {
   border-radius: 7px;
-  background-color: rgba(0,0,0,0.48);
 }
 
 #bottom-section .left {
@@ -112,6 +111,7 @@ body {
   min-width: 150px;
   margin: 0 0 5px 5px;
   padding: .5rem 1rem;
+  background-color: rgba(0,0,0,0.48);
 }
 
 #bottom-section .center {
@@ -120,20 +120,22 @@ body {
   left: 50%;
   bottom: 0;
   font-size: 1rem;
-  line-height: 1;
-  font-weight: 700;
+  line-height: 1.15;
   width: 50%;
   margin: 0 0 5px -25%;
 }
 
-#quote {
+#quote>div {
+  display: inline-block;
+}
+
+#quoteText {
   padding: .75rem;
   text-shadow: 0 0 300px rgba(0, 0, 0, 1);
 }
 
-#author {
-  padding: 0 1rem;
-  font-weight: 400;
+#quoteAuthor {
+  font-size: 0.875rem;
   text-align: right;
 }
 

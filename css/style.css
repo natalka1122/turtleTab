@@ -165,3 +165,69 @@ body {
 #bottom-section span{
   display: block;
 }
+
+
+
+
+/*************
+* abhi_hk95
+*************/
+#toto{
+  width: 250px;
+  background-color: rgba(0,0,0,0.66);
+  margin: 0px 5px 5px 0;
+  float: right;
+}
+#toto li{
+  background:rgba(0,0,0,0.48);
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+}
+#toto .fa-pencil{
+  float: right;
+  padding-right: 10px;
+}
+
+#toto span{
+  background:#e74c3c;
+  height: 40px;
+  margin-right: 20px;
+  text-align: center;
+  color: white;
+  width: 0px;
+  display: inline-block;
+  transition: 0.4s linear;
+  opacity: 0;
+}
+
+#toto li:hover span{
+  width: 40px;
+  opacity: 1;
+}
+
+#toto input{
+  font-size: 18px;
+  background:rgba(0,0,0,0.6);
+  width: 100%;
+  padding: 10px 10px 10px 20px;
+  box-sizing: border-box;
+  color: #2980b9;
+  border:3px solid rgba(0,0,0,0);
+  transition: 0.3s linear;
+}
+#toto input:focus{
+  background:white;
+  border: 3px solid #2980b9;
+  outline:none;
+
+}
+#toto ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#toto .completed{
+  color: gray;
+  text-decoration: line-through;
+}

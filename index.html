@@ -5,14 +5,9 @@
   <title>New Tab</title>
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/time.js"></script>
-  <script src="js/unsplash-api.js"></script>
-  <script src="js/quotes.js"></script>
-  <script type="text/javascript" src="./js/weather-location.js"></script>
 </head>
 
-<body>
+<body id="turtleTab">
   <!-- Top row of page -->
   <section id="top-section">
     <div id="weather-comp"><span id="weather"></span><i id="icon"></i></div>
@@ -28,7 +23,7 @@
   <!-- Bottom row of page -->
   <section id="bottom-section">
 
-    <div class="left" id="imageAttribution">
+    <div class="left" id="imgAttribution">
       <p id="unsplash">
         From <a href="https://unsplash.com/?utm_source=turtleTabE&utm_medium=referral&utm_campaign=api-credit" target="_blank">Unsplash</a>
       </p>
@@ -49,6 +44,13 @@
     </div>
 
   </section>
+  <script src="libs/jquery-3.2.1.min.js"></script>
+  <script src="libs/localforage.min.js"></script>
+  <script src="js/helper-functions.js"></script>
+  <script src="js/images.js"></script>
+  <script src="js/time.js"></script>
+  <!--<script src="js/quotes.js"></script>-->
+  <script src="./js/weather-location.js"></script>
 
 </body>
 

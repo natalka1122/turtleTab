@@ -130,13 +130,14 @@ body {
 }
 
 #quoteText {
+  font-size: 1.5rem;
   padding: .75rem;
   text-shadow: 0 0 300px rgba(0, 0, 0, 1);
 }
 
 #quoteAuthor {
   font-size: 0.875rem;
-  text-align: right;
+  text-align: center;
 }
 
 #forismatic {

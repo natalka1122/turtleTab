@@ -57,3 +57,20 @@ function deleteFromStorage(key) {
     });
 
 }
+
+/*********************************************************************
+ * createImage(dateStr, name, username, location, Blob)
+ * author: 8thday, created: 22/08/2017
+ *********************************************************************/
+/*function createImage(dateStr, name, username, location, Blob) {
+
+  let imageName = "ttBackground-" + dateStr
+
+  imageName = {
+    profileURL: "https://unsplash.com/@" + username + "?utm_source=turtleTabE&utm_medium=referral&utm_campaign=api-credit",
+    photographerLink = "<a href=\"" + profileURL + "\" target=\"_blank\">" + name + "</a>",
+    photographerLocation: location,
+    image: Blob
+  };
+
+}*/

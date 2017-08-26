@@ -130,7 +130,7 @@ function saveQuote(tomorrowsQuote, quoteObj) {
   });    
 }
 
-function deleteOldQuote(yesterdaysDateStr) {
+/*function deleteOldQuote(yesterdaysDateStr) {
   let yesterdaysQuote = "ttQuote-" + yesterdaysDateStr;
   deleteFromStorage(yesterdaysQuote);
-}
+}*/

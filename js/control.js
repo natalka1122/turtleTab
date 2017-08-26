@@ -2,26 +2,19 @@
 
 (function() {
 
-  let yesterdaysDateStr = getFormattedDate("yesterday");
+  //let yesterdaysDateStr = getFormattedDate("yesterday");
   let todaysDateStr = getFormattedDate("today");
   let tomorrowsDateStr = getFormattedDate("tomorrow");
 
-  // display today's background
+  // display today's background and quote
   displayBackground(todaysDateStr);
-
-  // display today's quote
   displayQuote(todaysDateStr);
 
-  // load tomorrow's background
+  // load tomorrow's background and quote
   preloadBackground(tomorrowsDateStr);
-
-  // load tomorrow's quote
   preloadQuote(tomorrowsDateStr);
 
-  // delete yesterday's background
-  deleteOldBackground(yesterdaysDateStr)
-
-  // delete yesterday's quote
-  deleteOldQuote(yesterdaysDateStr)
+  // delete old backgrounds and quotes
+  deleteOldData(todaysDateStr, tomorrowsDateStr)
 
 })();

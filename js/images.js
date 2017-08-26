@@ -1,6 +1,6 @@
 
 function displayBackground(todaysDateStr) {
-  // if an unsplash image with given date exists in storage, display it
+  // if an image with given date exists in storage, display it
   let todaysImage = "ttBackground-" + todaysDateStr;
 
   localforage.getItem(todaysImage).then(function(obj) {
@@ -144,7 +144,7 @@ function fetchNewImage(imageName) {
   fetch(apiURL).then(function(response) {
     return response.json();
   }).then(function(imageJSON) {
-    console.log(imageJSON);
+    //console.log(imageJSON);
     imageURL = imageJSON.urls.raw + pictureMod;
     photographerName = imageJSON.user.name;
     photographerUsername = imageJSON.user.username;
@@ -175,7 +175,20 @@ function saveImage(imageURL, imageName, imageObj) {
   });    
 }
 
-function deleteOldBackground(yesterdaysDateStr) {
-  let yesterdaysImage = "ttBackground-" + yesterdaysDateStr;
-  deleteFromStorage(yesterdaysImage);
+function deleteOldData(todaysDateStr, tomorrowsDateStr) {
+
+  localforage.keys().then(function(keysArray) {
+    let toDelete = keysArray.filter(function(key){
+      if (key.slice(-10) !== todaysDateStr && key.slice(-10) !== tomorrowsDateStr) {
+        if ((key.slice(0, 13) === "ttBackground-") || (key.slice(0, 8) === "ttQuote-")) {
+          return key;
+        }
+      }
+    });
+    for (let i = 0; i < toDelete.length; i++) {
+      deleteFromStorage(toDelete[i]);
+    }
+  }).catch(function(err) {
+    console.error(err);
+  });
 }

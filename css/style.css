@@ -10,16 +10,23 @@ html {
 
 body {
   font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
-  height: 100vh;
   background-color: #333;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
   display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.main-wrapper {  
+  height: 100vh;
+  width: 100%;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0;  
+  transition: opacity 500ms linear;
 }
 
 /***********************
@@ -168,7 +175,7 @@ body {
 }
 
 /************************
-* abhi_hk95 (to-do list)
+* to-do list (abhi_hk95)
 *************************/
 #toto{
   width: 250px;
@@ -230,5 +237,71 @@ body {
   text-decoration: line-through;
 }
 /*******************************
-* end of abhi_hk95 (to-do list)
+* end of to-do list (abhi_hk95)
 ********************************/
+
+/*******************************
+* greeting wrapper (8thday)
+********************************/
+
+.start-page {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  height: 100vh;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s linear;
+}
+
+.greeting {
+  font-size: 3rem;
+}
+
+#name {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #fff;
+}
+
+#name:focus {
+  outline: 0;
+}
+
+.greeting-msg {
+  height: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.greeting-msg a:link,
+.greeting-msg a:visited {
+  color: #fff;
+}
+
+.greeting-msg a:hover,
+.greeting-msg a:active {
+  text-decoration: none;
+}
+
+/**********************************
+* end of greeting wrapper (8thday)
+***********************************/
+
+
+/**********************************
+* utility classes (8thday)
+***********************************/
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}

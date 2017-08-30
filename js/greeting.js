@@ -1,33 +1,36 @@
-let start = document.querySelector(".start-page");
-let main = document.querySelector(".main-wrapper");
-let greeting = document.querySelector("#greeting");
-
 if (localStorage.getItem("name")) {
-  let greetingText = timeAppropriateGreeting() + localStorage.getItem("name") + "!";
-  start.classList.toggle("hidden");
-  main.classList.toggle("hidden");
-  greeting.innerHTML = greetingText;
+  greetUser();
+  allowNameChange();
 }
 else {
   let name = document.querySelector("#name");
-  let msg = document.querySelector(".greeting-msg");
+  name.addEventListener("keydown", function(event) {  
 
-  name.addEventListener('keydown', function(event) {  
-
-    if (event.which == 13){ //Enter key pressed
+    if (event.key === "Enter"){ //Enter key pressed
       if (this.value === "") {
-        msg.innerHTML = "<span>Please enter your name.</span><span><a href=\"\">Not now!</a></span>";
+        let msg = document.querySelector(".greeting-msg");
+        msg.innerHTML = "Please enter your name.";
       }
       else {
-        start.classList.toggle("hidden");
         localStorage.setItem("name", this.value);
-        main.classList.toggle("hidden");
-        let greetingText = timeAppropriateGreeting() + localStorage.getItem("name") + "!";
-        greeting.innerHTML = greetingText;
+        greetUser();
+        allowNameChange();
       }
     }
-
   });
+}
+
+function greetUser() {
+  let start = document.querySelector(".start-page");
+  let main = document.querySelector(".main-wrapper");
+  let greeting = document.querySelector("#greeting");
+  let greetingText = timeAppropriateGreeting();
+  greetingText += "<span contenteditable=\"false\" spellcheck=\"false\">";
+  greetingText += localStorage.getItem("name");
+  greetingText += "</span>.";
+  greeting.innerHTML = greetingText;
+  start.classList.add("hidden");
+  main.classList.remove("hidden");
 }
 
 function timeAppropriateGreeting() {
@@ -42,4 +45,27 @@ function timeAppropriateGreeting() {
   else {
     return "Good Evening ";
   }
+}
+
+function allowNameChange() {
+  let displayedName = document.querySelector("#greeting>span");
+
+  displayedName.addEventListener("dblclick", function(event) {
+    this.setAttribute("contenteditable", "true");
+    this.classList.add("editName");
+    this.focus();
+  });
+
+  displayedName.addEventListener("keydown", function(event) {
+    if (event.key === "Enter"){ //Enter key pressed
+      event.preventDefault();
+      displayedName.blur();
+    }
+  });
+
+  displayedName.addEventListener("blur", function(event) {
+    localStorage.setItem("name", this.innerHTML);
+    this.setAttribute("contenteditable", "false");
+    this.classList.remove("editName");  
+  });
 }

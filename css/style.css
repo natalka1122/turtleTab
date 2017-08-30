@@ -293,6 +293,16 @@ body {
   text-decoration: none;
 }
 
+#greeting>span:focus {
+  outline: 0;
+}
+
+.editName {
+  border-bottom: 3px solid #fff;
+  cursor: auto;
+  background-color: transparent;
+}
+
 /**********************************
 * end of greeting wrapper (8thday)
 ***********************************/

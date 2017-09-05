@@ -21,6 +21,19 @@
       <p id="time"></p>
       <p id="date"></p>    
       <p id="greeting"></p>
+      <div id="focus-wrapper">
+        <p id="focus-question">What is your main focus today?</p>
+        <p id="focus-day" class="hidden">Today</p>
+        <input type="text" id="focus-input" name="focus-input">
+        <div class="focus-row hidden">
+          <div>
+            <span class="focus-checkbox fa fa-square-o"></span>
+            <span class="focus-checkbox fa fa-check-square-o hidden"></span>
+          </div>        
+          <span id="focus"></span>
+          <span class="focus-close fa fa-times"></span>
+        </div>
+      </div>        
     </section>
 
     <!-- Bottom row of page -->
@@ -70,6 +83,7 @@
   <script src="js/greeting.js"></script>
   <script src="js/quote.js"></script>
   <script src="js/images.js"></script>
+  <script src="js/focus.js"></script>
   <script src="js/time.js"></script>
   <script src="js/control.js"></script>
   <script src="./js/weather-location.js"></script>

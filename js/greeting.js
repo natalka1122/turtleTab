@@ -37,13 +37,13 @@ function timeAppropriateGreeting() {
   let currentDateTime = new Date();
   let hour = currentDateTime.getHours();
   if (hour >= 0 && hour < 12) {
-    return "Good Morning ";
+    return "Good Morning, ";
   }
   else if (hour < 18) {
-    return "Good Afternoon ";
+    return "Good Afternoon, ";
   }
   else {
-    return "Good Evening ";
+    return "Good Evening, ";
   }
 }
 

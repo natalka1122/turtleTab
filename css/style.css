@@ -10,16 +10,23 @@ html {
 
 body {
   font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
-  height: 100vh;
   background-color: #333;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
   display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.main-wrapper {  
+  height: 100vh;
+  width: 100%;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0;  
+  transition: opacity 500ms linear;
 }
 
 /***********************
@@ -130,7 +137,7 @@ body {
 }
 
 #quoteText {
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   padding: .75rem;
   text-shadow: 0 0 300px rgba(0, 0, 0, 1);
 }
@@ -168,7 +175,7 @@ body {
 }
 
 /************************
-* abhi_hk95 (to-do list)
+* to-do list (abhi_hk95)
 *************************/
 #toto{
   width: 250px;
@@ -229,6 +236,188 @@ body {
   color: gray;
   text-decoration: line-through;
 }
+/* end of to-do list (abhi_hk95) */
+
 /*******************************
-* end of abhi_hk95 (to-do list)
+* greeting feature (8thday)
 ********************************/
+
+.start-page {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  height: 100vh;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s linear;
+}
+
+.greeting {
+  font-size: 3rem;
+}
+
+#name {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #fff;
+}
+
+#name:focus {
+  outline: 0;
+}
+
+.greeting-msg {
+  height: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.greeting-msg a:link,
+.greeting-msg a:visited {
+  color: #fff;
+}
+
+.greeting-msg a:hover,
+.greeting-msg a:active {
+  text-decoration: none;
+}
+
+#greeting {
+  font-size: 3.375rem;
+  margin: .75rem 0 1.5rem;
+  text-align: center;
+}
+
+#greeting>span:focus {
+  outline: 0;
+}
+
+.editName {
+  border-bottom: 3px solid #fff;
+  cursor: auto;
+  background-color: transparent;
+}
+/* end of greeting feature (8thday) */
+
+/*******************************
+* daily focus (8thday)
+********************************/
+
+#focus-wrapper {
+  min-height: 150px;
+  max-height: 164px;
+  overflow: hidden;
+  max-width: 90%;
+}
+
+#focus-question {  
+  color: #fff;
+  font-size: 2.25rem;
+  text-align: center;
+  margin-bottom: 0;
+  transition: all 500ms linear;
+}
+
+#focus-day {
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin: -1.875rem auto 1rem;
+  transition: opacity 500ms linear;
+}
+
+#focus-input {
+  color: #fff;
+  font-size: 2.25rem;
+  text-align: center;
+  display: block;
+  width: 90%;
+  background-color: transparent;
+  padding-top: 0;
+  padding-bottom: 1px;
+  border: none;
+  border-bottom: 2px solid #fff;
+  margin: 0 auto;
+  transition: opacity 500ms linear;
+}
+
+#focus-input:focus {
+  outline: 0;
+}
+
+.focus-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: -36px;
+  transition: opacity 500ms linear;
+}
+
+.focus-row>div {
+  padding: .5rem 2rem 0 0;
+}
+
+.focus-checkbox {
+  //font-family: "FontAwesome";
+}
+
+.focus-checkbox:hover {
+  cursor: pointer;
+}
+
+.focus-checkbox,
+.focus-close {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.focus-close {
+  font-size: 1.25rem;
+  font-weight: 300;
+  padding: 6px 9.5px;
+  border: 1px solid transparent;
+}
+
+.focus-close:hover {
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.focus-checkbox.fa-check-square-o {
+  margin-left: -23px;
+}
+
+#focus {
+  color: #fff;
+  font-size: 2.25rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+#focus.complete {
+  text-decoration: line-through;
+}
+
+/* end of daily focus (8thday) */
+
+/**********************************
+* utility classes (8thday)
+***********************************/
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+}

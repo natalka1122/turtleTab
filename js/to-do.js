@@ -9,7 +9,7 @@ $("#toto ul").on("click","li span",function(e){
 	});
 	e.stopPropagation();
 });
-$("input[type='text']").keypress(function(evt){
+$("#todoInput").keypress(function(evt){
 	if(evt.which === 13){
 		var todtxt=$(this).val();
 		$(this).val("");

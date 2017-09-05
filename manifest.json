@@ -3,10 +3,6 @@
     "name": "turtleTab",
     "description": "Calls you a turtle",
     "version": "0.0.0.9",
-    "options_ui": {
-        "page": "options.html",
-        "chrome_style": true
-    },
     "permissions" : [
         "management",
         "geolocation",

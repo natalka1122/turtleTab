@@ -9,53 +9,81 @@
 </head>
 
 <body id="turtleTab">
-  <!-- Top row of page -->
-  <section id="top-section">
-    <div id="weather-comp"><span id="weather"></span><i id="icon"></i></div>
-  </section>
+  <div class="main-wrapper hidden">
 
-  <!-- Middle row of page -->
-  <section id="center-section">
-    <p id="time"></p>
-    <p id="date"></p>    
-    <p id="greeting">Hello Turtle!</p>
-  </section>
+    <!-- Top row of page -->
+    <section id="top-section">
+      <div id="weather-comp"><span id="weather"></span><i id="icon"></i></div>
+    </section>
 
-  <!-- Bottom row of page -->
-  <section id="bottom-section">
+    <!-- Middle row of page -->
+    <section id="center-section">
+      <p id="time"></p>
+      <p id="date"></p>    
+      <p id="greeting"></p>
+      <div id="focus-wrapper">
+        <p id="focus-question">What is your main focus today?</p>
+        <p id="focus-day" class="hidden">Today</p>
+        <input type="text" id="focus-input" name="focus-input">
+        <div class="focus-row hidden">
+          <div>
+            <span class="focus-checkbox fa fa-square-o"></span>
+            <span class="focus-checkbox fa fa-check-square-o hidden"></span>
+          </div>        
+          <span id="focus"></span>
+          <span class="focus-close fa fa-times"></span>
+        </div>
+      </div>        
+    </section>
 
-    <div class="left" id="imgAttribution">
-      <p id="unsplash">
-        From <a href="https://unsplash.com/?utm_source=turtleTabE&utm_medium=referral&utm_campaign=api-credit" target="_blank">Unsplash</a>
-      </p>
-      <p id="photographer"></p>
-      <p id="location"></p>
-    </div>
+    <!-- Bottom row of page -->
+    <section id="bottom-section">
 
-    <div class="center" id="quote">
-      <div>
-        <p id="quoteText"></p>
-        <p id="quoteAuthor"></p>
-        <p id="forismatic"></p>
+      <div class="left" id="imgAttribution">
+        <p id="unsplash">
+          From <a href="https://unsplash.com/?utm_source=turtleTabE&utm_medium=referral&utm_campaign=api-credit" target="_blank">Unsplash</a>
+        </p>
+        <p id="photographer"></p>
+        <p id="location"></p>
       </div>
-    </div>
 
-    <div class="bottom-section right">
-      <div id="toto">
-        <h3>To-Do List<i class="fa fa-pencil" aria-hidden="true"></i></h3>
-        <input type="text" placeholder="Add new tasks"></input>
-        <ul>
-        </ul>
-    </div>
-    </div>
+      <div class="center" id="quote">
+        <div>
+          <p id="quoteText"></p>
+          <p id="quoteAuthor"></p>
+          <p id="forismatic"></p>
+        </div>
+      </div>
 
+      <div class="bottom-section right">
+        <div id="toto">
+          <h3>To-Do List<i class="fa fa-pencil" aria-hidden="true"></i></h3>
+          <input type="text" id="todoInput" placeholder="Add new tasks"></input>
+          <ul>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+  </div><!-- end of .main-wrapper -->
+
+  <section class="start-page">
+    <div class="greeting-wrapper">
+      <p class="greeting">Hello, what is your name?</p>
+      <input type="text" id="name" name="name">
+      <p class="greeting-msg"></p>
+    </div>    
   </section>
+
   <script src="libs/jquery-3.2.1.min.js"></script>
   <script src="libs/localforage.min.js"></script>
   <script src="js/variables.js"></script>
   <script src="js/helper-functions.js"></script>
+  <script src="js/greeting.js"></script>
   <script src="js/quote.js"></script>
   <script src="js/images.js"></script>
+  <script src="js/focus.js"></script>
   <script src="js/time.js"></script>
   <script src="js/control.js"></script>
   <script src="./js/weather-location.js"></script>

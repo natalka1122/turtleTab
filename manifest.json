@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "turtleTab",
-    "description": "Calls you a turtle",
-    "version": "0.0.0.9",
+    "description": "Momentum clone, for Chingu Voyage Cohort build to learn project",
+    "version": "0.1.3",
     "permissions" : [
         "management",
         "geolocation",
@@ -20,9 +20,10 @@
    },
     "browser_action": {
         "default_icon": {
-            "16": "icons/icon16.png", // https://commons.wikimedia.org/wiki/File:Turtle_Icon.svg
-            //"24": "icons/icon24.png",
-            "32": "icons/icon32.png"
+            "16": "icons/icon16.png",
+            "32": "icons/icon32.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
         },
         "default_title": "turtleTab"
     }

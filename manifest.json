@@ -1,13 +1,12 @@
 {
     "manifest_version": 2,
-    "name": "turtleTab",
-    "description": "Momentum clone, for Chingu Voyage Cohort build to learn project",
-    "version": "0.1.3",
+    "name": "turtleTab, by Twenty Turtles",
+    "short_name": "turtleTab",
+    "description": "A Momentum clone, by Twenty Turtles - TurtleTab is a Chingu Voyage build to learn project.",
+    "version": "0.1.6",
     "permissions" : [
         "management",
         "geolocation",
-        "https://api.darksky.net/*",
-        "*://api.forismatic.com/*",
         "storage",
         "tabs"
     ],

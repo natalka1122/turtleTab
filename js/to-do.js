@@ -18,5 +18,5 @@ $("#todoInput").keypress(function(evt){
 });
 
 $("#toto .fa-pencil").on("click",function(){
-	$("input[type='text']").fadeToggle();
-})
+	$("#todoInput").fadeToggle();
+});

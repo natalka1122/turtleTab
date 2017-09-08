@@ -10,16 +10,23 @@ html {
 
 body {
   font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
-  height: 100vh;
   background-color: #333;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
   display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.main-wrapper {  
+  height: 100vh;
+  width: 100%;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0;
+  transition: opacity 500ms linear;
 }
 
 /***********************
@@ -53,7 +60,7 @@ body {
   justify-content: center;
   align-items: center;
   flex: 2 1 auto;
-  text-shadow: 0 0 300px rgba(0, 0, 0, 1);
+  //text-shadow: 0 0 300px rgba(0, 0, 0, 1);
 }
 
 #center-section .center {
@@ -98,7 +105,6 @@ body {
 #bottom-section .center,
 #bottom-section .right {
   border-radius: 7px;
-  background-color: rgba(0,0,0,0.48);
 }
 
 #bottom-section .left {
@@ -112,6 +118,7 @@ body {
   min-width: 150px;
   margin: 0 0 5px 5px;
   padding: .5rem 1rem;
+  background-color: rgba(0,0,0,0.48);
 }
 
 #bottom-section .center {
@@ -120,21 +127,24 @@ body {
   left: 50%;
   bottom: 0;
   font-size: 1rem;
-  line-height: 1;
-  font-weight: 700;
+  line-height: 1.15;
   width: 50%;
   margin: 0 0 5px -25%;
 }
 
-#quote {
+#quote>div {
+  display: inline-block;
+}
+
+#quoteText {
+  font-size: 1.125rem;
   padding: .75rem;
   text-shadow: 0 0 300px rgba(0, 0, 0, 1);
 }
 
-#author {
-  padding: 0 1rem;
-  font-weight: 400;
-  text-align: right;
+#quoteAuthor {
+  font-size: 0.875rem;
+  text-align: center;
 }
 
 #forismatic {
@@ -144,11 +154,9 @@ body {
 }
 
 #bottom-section .right {
-  display: none;
   position: absolute;
   right: 0;
   bottom: 0;
-  margin: 0 5px 5px 0;
 }
 
 #bottom-section a:link,
@@ -164,4 +172,252 @@ body {
 }
 #bottom-section span{
   display: block;
+}
+
+/************************
+* to-do list (abhi_hk95)
+*************************/
+#toto{
+  width: 250px;
+  background-color: rgba(0,0,0,0.66);
+  margin: 0px 5px 5px 0;
+  float: right;
+}
+#toto li{
+  background:rgba(0,0,0,0.48);
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+}
+#toto .fa-pencil{
+  float: right;
+  padding-right: 10px;
+}
+
+#toto span{
+  background:#e74c3c;
+  height: 40px;
+  margin-right: 20px;
+  text-align: center;
+  color: white;
+  width: 0px;
+  display: inline-block;
+  transition: 0.4s linear;
+  opacity: 0;
+}
+
+#toto li:hover span{
+  width: 40px;
+  opacity: 1;
+}
+
+#toto input{
+  font-size: 18px;
+  background:rgba(0,0,0,0.6);
+  width: 100%;
+  padding: 10px 10px 10px 20px;
+  box-sizing: border-box;
+  color: #2980b9;
+  border:3px solid rgba(0,0,0,0);
+  transition: 0.3s linear;
+}
+#toto input:focus{
+  background:white;
+  border: 3px solid #2980b9;
+  outline:none;
+
+}
+#toto ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#toto .completed{
+  color: gray;
+  text-decoration: line-through;
+}
+/* end of to-do list (abhi_hk95) */
+
+/*******************************
+* greeting feature (8thday)
+********************************/
+
+.start-page {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  height: 100vh;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s linear;
+}
+
+.greeting {
+  font-size: 3rem;
+}
+
+#name {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #fff;
+}
+
+#name:focus {
+  outline: 0;
+}
+
+.greeting-msg {
+  height: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.greeting-msg a:link,
+.greeting-msg a:visited {
+  color: #fff;
+}
+
+.greeting-msg a:hover,
+.greeting-msg a:active {
+  text-decoration: none;
+}
+
+#greeting {
+  font-size: 3.375rem;
+  margin: .75rem 0 1.5rem;
+  text-align: center;
+}
+
+#greeting>span:focus {
+  outline: 0;
+}
+
+.editName {
+  border-bottom: 3px solid #fff;
+  cursor: auto;
+  background-color: transparent;
+}
+/* end of greeting feature (8thday) */
+
+/*******************************
+* daily focus (8thday)
+********************************/
+
+#focus-wrapper {
+  min-height: 150px;
+  max-height: 164px;
+  overflow: hidden;
+  max-width: 90%;
+}
+
+#focus-question {  
+  color: #fff;
+  font-size: 2.25rem;
+  text-align: center;
+  margin-bottom: 0;
+  transition: all 500ms linear;
+}
+
+#focus-day {
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin: -1.875rem auto 1rem;
+  transition: opacity 500ms linear;
+}
+
+#focus-input {
+  color: #fff;
+  font-size: 2.25rem;
+  text-align: center;
+  display: block;
+  width: 90%;
+  background-color: transparent;
+  padding-top: 0;
+  padding-bottom: 1px;
+  border: none;
+  border-bottom: 2px solid #fff;
+  margin: 0 auto;
+  transition: opacity 500ms linear;
+}
+
+#focus-input:focus {
+  outline: 0;
+}
+
+.focus-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: -36px;
+  transition: opacity 500ms linear;
+}
+
+.focus-row>div {
+  padding: .5rem 2rem 0 0;
+}
+
+.focus-checkbox {
+  //font-family: "FontAwesome";
+}
+
+.focus-checkbox:hover {
+  cursor: pointer;
+}
+
+.focus-checkbox,
+.focus-close {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.focus-close {
+  font-size: 1.25rem;
+  font-weight: 300;
+  padding: 6px 9.5px;
+  border: 1px solid transparent;
+}
+
+.focus-close:hover {
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.focus-checkbox.fa-check-square-o {
+  margin-left: -23px;
+}
+
+#focus {
+  color: #fff;
+  font-size: 2.25rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+#focus.complete {
+  text-decoration: line-through;
+}
+
+/* end of daily focus (8thday) */
+
+/**********************************
+* utility classes (8thday)
+***********************************/
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
 }

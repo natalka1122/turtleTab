@@ -3,7 +3,7 @@
     "name": "turtleTab, by Twenty Turtles",
     "short_name": "turtleTab",
     "description": "A Momentum clone, by Twenty Turtles - TurtleTab is a Chingu Voyage build to learn project.",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "permissions" : [
         "management",
         "geolocation",

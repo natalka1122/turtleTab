@@ -70,20 +70,38 @@ body {
 #time {
   min-height: 160px;
   font-size: 10rem;
-  color: #fff;
   margin: 0;
+  //-webkit-text-stroke: 1px #000;
+  color: #fff;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
 }
+
 #date {
   min-height: 32px;
-  font-size: 2rem;
+  font-size: 2rem;  
+  -webkit-text-stroke: 1px #000;
   color: #fff;
+  text-shadow:
+   -1px -1px 0 rgba(0, 0, 0, .2),  
+    1px -1px 0 rgba(0, 0, 0, .2),
+    -1px 1px 0 rgba(0, 0, 0, .2),
+     1px 1px 0 rgba(0, 0, 0, .2);
   margin: 0;
 }
 
 #greeting {
   font-size: 3rem;
-  line-height: 1;
+  line-height: 1;  
   color: #fff;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
   display: inline-block;
 }
 
@@ -139,12 +157,24 @@ body {
 #quoteText {
   font-size: 1.125rem;
   padding: .75rem;
-  text-shadow: 0 0 300px rgba(0, 0, 0, 1);
+  color: #fff;
+  text-shadow:
+   -1px -1px 0 rgba(0, 0, 0, .5),  
+    1px -1px 0 rgba(0, 0, 0, .5),
+    -1px 1px 0 rgba(0, 0, 0, .5),
+     1px 1px 0 rgba(0, 0, 0, .5);
+  //text-shadow: 0 0 300px rgba(0, 0, 0, 1);
 }
 
 #quoteAuthor {
   font-size: 0.875rem;
   text-align: center;
+  color: #fff;
+  text-shadow:
+   -1px -1px 0 rgba(0, 0, 0, .5),  
+    1px -1px 0 rgba(0, 0, 0, .5),
+    -1px 1px 0 rgba(0, 0, 0, .5),
+     1px 1px 0 rgba(0, 0, 0, .5);
 }
 
 #forismatic {
@@ -246,6 +276,11 @@ body {
   position: absolute;
   top: 0;
   color: #fff;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
   height: 100vh;
   opacity: 1;
   display: flex;
@@ -261,6 +296,11 @@ body {
 
 #name {
   color: #fff;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
   font-size: 3rem;
   text-align: center;
   display: block;
@@ -284,6 +324,11 @@ body {
 .greeting-msg a:link,
 .greeting-msg a:visited {
   color: #fff;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
 }
 
 .greeting-msg a:hover,
@@ -321,6 +366,11 @@ body {
 
 #focus-question {  
   color: #fff;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
   font-size: 2.25rem;
   text-align: center;
   margin-bottom: 0;
@@ -329,6 +379,11 @@ body {
 
 #focus-day {
   color: #fff;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
   font-size: 1.75rem;
   font-weight: 700;
   text-align: center;
@@ -339,6 +394,11 @@ body {
 
 #focus-input {
   color: #fff;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
   font-size: 2.25rem;
   text-align: center;
   display: block;
@@ -357,6 +417,12 @@ body {
 }
 
 .focus-row {
+  color: #fff;
+  text-shadow:
+   -1px -1px 0 rgba(0, 0, 0, .3),  
+    1px -1px 0 rgba(0, 0, 0, .3),
+    -1px 1px 0 rgba(0, 0, 0, .3),
+     1px 1px 0 rgba(0, 0, 0, .3);
   display: flex;
   justify-content: space-around;
   margin-top: -36px;
@@ -402,6 +468,11 @@ body {
 
 #focus {
   color: #fff;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
   font-size: 2.25rem;
   text-align: center;
   padding: 0 1rem;

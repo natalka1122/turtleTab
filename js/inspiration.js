@@ -133,7 +133,8 @@
   }
 
   function fetchNewImage(imageName) {
-    const apiURL = "https://api.unsplash.com/photos/random?client_id=" + applicationId;
+    const appID = config.unsplashApplicationId;
+    const apiURL = "https://api.unsplash.com/photos/random?client_id=" + appID;
     const pictureMod = "?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=srgb&fit=max&h=1080&orientation=landscape";
     let unsplashImageURL = "https://images.unsplash.com/photo-1489899318117-c43f753d589b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=srgb&fit=max&h=1080&orientation=landscape";
     let photographerUsername;

@@ -6,3 +6,7 @@ package-lock.json
 .eslintrc.json
 sandbox/
 deploy/
+turtleTab screen shots/
+
+# Configuration files
+js/config.js
